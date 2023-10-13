@@ -92,17 +92,17 @@ import numpy as np
 # plt.xticks(rotation=45)
 # plt.show()
 
-df = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
-df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
-naujas_df_2022 = df[['Menuo', 'Is viso registruota']].copy()
-print(naujas_df_2022)
-plt.figure(figsize=(10,6))
-plt.bar(naujas_df_2022['Menuo'], naujas_df_2022['Is viso registruota'])
-plt.xlabel('Menuo')
-plt.ylabel('Is viso registruota')
-plt.title('Transporto registracija 2022')
-plt.xticks(rotation=45)
-plt.show()
+# df = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
+# df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
+# naujas_df_2022 = df[['Menuo', 'Is viso registruota']].copy()
+# print(naujas_df_2022)
+# plt.figure(figsize=(10,6))
+# plt.bar(naujas_df_2022['Menuo'], naujas_df_2022['Is viso registruota'])
+# plt.xlabel('Menuo')
+# plt.ylabel('Is viso registruota')
+# plt.title('Transporto registracija 2022')
+# plt.xticks(rotation=45)
+# plt.show()
 
 # TIKSLAS: PATIKRINTI, AR EGZISTUOJA AUTOMOBILIU PIRKIMO SEZONISKUMAS: 2021/2022
 
@@ -337,22 +337,22 @@ plt.show()
 # NUO VISU REGISTRUOTU AUTOMOBILIU 2021/2022 METAIS
 # STULPELINIS GRAFIKAS
 
-data_files = [('Files_csv/automobiliu_registracija_2021.csv', '2021'),
-              ('Files_csv/automobiliu_registracija_2022.csv', '2022')]
-procentai = []
-for data_file, year in data_files:
-    df = pd.read_csv(data_file, skipfooter=1, engine='python')
-    nauji = df['Is viso nauju transporto priemoniu'].sum()
-    viso = df['Is viso naudotu transporto priemoniu'].sum() + nauji
-    procentine_dalis = (nauji / viso) * 100
-    procentai.append(procentine_dalis)
-
-plt.bar([year for _, year in data_files], procentai, color=['blue', 'green'])
-plt.xlabel('Metai')
-plt.ylabel('Procentai')
-plt.title('Naujų automobilių procentinė dalis nuo viso registruotų automobilių')
-plt.ylim(0, 100)  # Nustatome Y ašies ribas nuo 0 iki 100
-plt.show()
+# data_files = [('Files_csv/automobiliu_registracija_2021.csv', '2021'),
+#               ('Files_csv/automobiliu_registracija_2022.csv', '2022')]
+# procentai = []
+# for data_file, year in data_files:
+#     df = pd.read_csv(data_file, skipfooter=1, engine='python')
+#     nauji = df['Is viso nauju transporto priemoniu'].sum()
+#     viso = df['Is viso naudotu transporto priemoniu'].sum() + nauji
+#     procentine_dalis = (nauji / viso) * 100
+#     procentai.append(procentine_dalis)
+#
+# plt.bar([year for _, year in data_files], procentai, color=['blue', 'green'])
+# plt.xlabel('Metai')
+# plt.ylabel('Procentai')
+# plt.title('Naujų automobilių procentinė dalis nuo viso registruotų automobilių')
+# plt.ylim(0, 100)  # Nustatome Y ašies ribas nuo 0 iki 100
+# plt.show()
 
 # ISVADA: ANALIZUOJANT METINIUS DUOMENIS MATYTI, KAD I LIETUVA IVEZAMA  TIK TRECDALIS NAUJU TRANSPORTO
 # PRIEMONIU NUO VISU PER METUS IVEZAMU TRANSPORTO PRIEMONIU
@@ -504,8 +504,8 @@ plt.show()
 
 # Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022
 
-df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv',skipfooter=1, engine='python')
-df = df[df['Unnamed: 0'] != 'Iš viso']
+# df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv',skipfooter=1, engine='python')
+# df = df[df['Unnamed: 0'] != 'Iš viso']
 
 # # 2022 m populiariausiu automobiliu markes skiriasi
 #
@@ -547,6 +547,7 @@ df = df[df['Unnamed: 0'] != 'Iš viso']
 #     'Automobiliu_sk': [60179, 72589, 59560, 61475, 56498]
 # }
 # df = pd.DataFrame(data)
+
 # # Paruošiame duomenis modeliui
 # X = df['Metai'].values.reshape(-1,1)
 # y = df['Automobiliu_sk'].values
@@ -571,3 +572,65 @@ df = df[df['Unnamed: 0'] != 'Iš viso']
 # NAUJU TRANSPORTO PRIEMONIU IVEZIMO MAZEJIMO TENDENCIJA. ISTORISKAI RODIKLIAMS ITAKOS
 # TUREJO: PANDEMIJA, PUSLAIDININKIU DEFICITAS, UKRAINOS KARAS, EURIBOR KILIMAS
 # IR INFLIACIJA
+
+# TIKSLAS: ATLIKTI KLIMATO KAITAI TVARESNIU IVEZAMU TRANSPORTO PRIEMONIU PROGNOZE ATEINANTIEMS 5 METAMS
+
+# TIK ELEKTRA VAROMI:
+# data = {
+#     'Metai': [2018, 2019, 2020, 2021, 2022],
+#     'Automobiliu_sk': [969, 1397, 2496, 4841, 7346]
+# }
+# df = pd.DataFrame(data)
+# # Paruošiame duomenis modeliui
+# X = df['Metai'].values.reshape(-1,1)
+# y = df['Automobiliu_sk'].values
+# # Apmokome modelį
+# model = LinearRegression().fit(X, y)
+# # Gaukime prognozę ateinantiems 5 metams
+# ateinanciu_metu_skaicius = 5
+# ateinanciu_metu_prognoze = np.array(range(2023, 2023 + ateinanciu_metu_skaicius)).reshape(-1, 1)
+# predicted_values = model.predict(ateinanciu_metu_prognoze)
+# # Pavaizduokime istorinius duomenis ir prognozę grafike
+# plt.figure(figsize=(10, 6))
+# plt.scatter(df['Metai'], df['Automobiliu_sk'], color='blue', label='Istoriniai duomenys')
+# plt.plot(ateinanciu_metu_prognoze, predicted_values, color='red', linestyle='-', marker='o', label='Prognozė')
+# plt.xlabel('Metai')
+# plt.ylabel('Automobilių skaičius')
+# plt.title('Elektromobiliu įvežimo prognozė')
+# plt.legend()
+# plt.grid(True)
+# plt.show()
+
+
+#  HIBRIDAI(BENZINAS/ELEKTRA):
+#
+# data = {
+#     'Metai': [2018, 2019, 2020, 2021, 2022],
+#     'Automobiliu_sk': [13378, 19594, 26894, 36536, 49151]
+# }
+# df = pd.DataFrame(data)
+# # Paruošiame duomenis modeliui
+# X = df['Metai'].values.reshape(-1,1)
+# y = df['Automobiliu_sk'].values
+# # Apmokome modelį
+# model = LinearRegression().fit(X, y)
+# # Gaukime prognozę ateinantiems 5 metams
+# ateinanciu_metu_skaicius = 5
+# ateinanciu_metu_prognoze = np.array(range(2023, 2023 + ateinanciu_metu_skaicius)).reshape(-1, 1)
+# predicted_values = model.predict(ateinanciu_metu_prognoze)
+# # Pavaizduokime istorinius duomenis ir prognozę grafike
+# plt.figure(figsize=(10, 6))
+# plt.scatter(df['Metai'], df['Automobiliu_sk'], color='blue', label='Istoriniai duomenys')
+# plt.plot(ateinanciu_metu_prognoze, predicted_values, color='red', linestyle='-', marker='o', label='Prognozė')
+# plt.xlabel('Metai')
+# plt.ylabel('Automobilių skaičius')
+# plt.title('Hibridu įvežimo prognozė')
+# plt.legend()
+# plt.grid(True)
+# plt.show()
+
+# ISVADA: NAUDOJANT TIESINES REGRESIJOS PROGNOZAVIMO METODA, MATYTI, KAD LIETUVOJE IR TOLIAU ISLIKS
+# ELEKTRINIU IR HIBRIDINIU TRANSPORTO PRIEMONIU AUGIMO TENDENCIJA
+
+# APIBENDRINIMAS:
+#
