@@ -22,7 +22,6 @@ import numpy as np
 # top_5_menesiai_is_viso_M1_2021 = suminiai_duomenys_2021.nlargest(5, 'suma_M1_klases_2021')
 # [['Menuo', 'suma_M1_klases_2021']]
 # print(top_5_menesiai_is_viso_M1_2021.to_string(index=False))
-#
 # #
 # suminiai_duomenys_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
 # suminiai_duomenys_2022['suma_transporto_priemoniu_2022'] = suminiai_duomenys_2022['Is viso naudotu transporto priemoniu']
@@ -38,7 +37,7 @@ import numpy as np
 # print(top_5_menesiai_is_viso_M1_2022.to_string(index=False))
 #
 # plt.figure(figsize=(14, 10))
-# # Viso transporto priemonių 2021
+# # # Viso transporto priemonių 2021
 # plt.subplot(2, 2, 1)
 # plt.bar(top_5_menesiai_is_viso_transporto_2021['Menuo'],
 # top_5_menesiai_is_viso_transporto_2021['suma_transporto_priemoniu_2021'], color='blue', label='2021')
@@ -46,7 +45,7 @@ import numpy as np
 # plt.xlabel('Mėnuo')
 # plt.ylabel('Kiekis')
 # plt.xticks(rotation=45)
-# # M1 klasės lengvųjų automobilių 2021
+# # # M1 klasės lengvųjų automobilių 2021
 # plt.subplot(2, 2, 2)
 # plt.bar(top_5_menesiai_is_viso_M1_2021['Menuo'],
 # top_5_menesiai_is_viso_M1_2021['suma_M1_klases_2021'], color='green', label='2021')
@@ -62,7 +61,7 @@ import numpy as np
 # plt.xlabel('Mėnuo')
 # plt.ylabel('Kiekis')
 # plt.xticks(rotation=45)
-# # M1 klasės lengvųjų automobilių 2022
+# # # M1 klasės lengvųjų automobilių 2022
 # plt.subplot(2, 2, 4)
 # plt.bar(top_5_menesiai_is_viso_M1_2022['Menuo'],
 # top_5_menesiai_is_viso_M1_2022['suma_M1_klases_2022'], color='green', label='2022')
@@ -71,6 +70,7 @@ import numpy as np
 # plt.ylabel('Kiekis')
 # plt.xticks(rotation=45)
 # plt.tight_layout()
+# plt.savefig('Grafikai/suminis_top5_menesiai_2021_2022.jpg')
 # plt.show()
 
 # 3 menesiai, per kuriuos i Lietuva ivezama maziausiai transporto priemoniu:
@@ -87,14 +87,14 @@ import numpy as np
 # low_3_menesiai_is_viso_M1_2021 = suminiai_duomenys_2021.nsmallest(3, 'suma_M1_klases_2021')[['Menuo', 'suma_M1_klases_2021']]
 # print(low_3_menesiai_is_viso_M1_2021.to_string(index=False))
 #
-#
+# #
 # suminiai_duomenys_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
 # suminiai_duomenys_2022['suma_transporto_priemoniu_2022'] = suminiai_duomenys_2022['Is viso naudotu transporto priemoniu']
 # +suminiai_duomenys_2022['Is viso nauju transporto priemoniu']
 # low_3_menesiai_is_viso_transporto_2022 =suminiai_duomenys_2022.nsmallest(3, 'suma_transporto_priemoniu_2022')
 # [['Menuo', 'suma_transporto_priemoniu_2022']]
 # print(low_3_menesiai_is_viso_transporto_2022.to_string(index=False))
-#
+# #
 # suminiai_duomenys_2022['suma_M1_klases_2022'] = suminiai_duomenys_2022['Is ju M1 klases naudotu lengvuju automobiliu']
 # +suminiai_duomenys_2022['Is ju M1 klases nauju lengvuju automobiliu']
 # low_3_menesiai_is_viso_M1_2022 = suminiai_duomenys_2022.nsmallest(3, 'suma_M1_klases_2022')
@@ -102,7 +102,7 @@ import numpy as np
 # print(low_3_menesiai_is_viso_M1_2022.to_string(index=False))
 #
 # plt.figure(figsize=(14, 10))
-# # Viso transporto priemonių 2021
+# # # Viso transporto priemonių 2021
 # plt.subplot(2, 2, 1)
 # plt.bar(low_3_menesiai_is_viso_transporto_2021['Menuo'],
 # low_3_menesiai_is_viso_transporto_2021['suma_transporto_priemoniu_2021'], color='blue', label='2021')
@@ -118,7 +118,7 @@ import numpy as np
 # plt.xlabel('Mėnuo')
 # plt.ylabel('Kiekis')
 # plt.xticks(rotation=45)
-# # Viso transporto priemonių 2022
+# # # Viso transporto priemonių 2022
 # plt.subplot(2, 2, 3)
 # plt.bar(low_3_menesiai_is_viso_transporto_2022['Menuo'],
 # low_3_menesiai_is_viso_transporto_2022['suma_transporto_priemoniu_2022'], color='blue', label='2022')
@@ -126,7 +126,7 @@ import numpy as np
 # plt.xlabel('Mėnuo')
 # plt.ylabel('Kiekis')
 # plt.xticks(rotation=45)
-# # M1 klasės lengvųjų automobilių 2022
+# # # M1 klasės lengvųjų automobilių 2022
 # plt.subplot(2, 2, 4)
 # plt.bar(low_3_menesiai_is_viso_M1_2022['Menuo'],
 # low_3_menesiai_is_viso_M1_2022['suma_M1_klases_2022'], color='green', label='2022')
@@ -135,6 +135,7 @@ import numpy as np
 # plt.ylabel('Kiekis')
 # plt.xticks(rotation=45)
 # plt.tight_layout()
+# plt.savefig('Grafikai/suminis_low3_menesiai_2021_2022.jpg')
 # plt.show()
 
 # ISVADA: LIETUVOJE DOMINUOJA I LIETUVA IVEZAMU PIRMA KARTA AUTOMOBILIU SEZONISKUMAS:
@@ -146,11 +147,11 @@ import numpy as np
 # 3 MENESIAI, KUOMET MAZIAUSIAI IVEZAMA YRA:SAUSIS/VASARIS/GRUODIS
 
 #  STULPELINIS GRAFIKAS:
-
+#
 # data_files = [('Files_csv/automobiliu_registracija_2021.csv', '2021'),
 #               ('Files_csv/automobiliu_registracija_2022.csv', '2022')]
 # plt.figure(figsize=(12, 8))
-# # Nustatome stulpelių plotį ir jų tarpą
+# # # Nustatome stulpelių plotį ir jų tarpą
 # bar_width = 0.35
 # index = range(len(pd.read_csv(data_files[0][0], skipfooter=1, engine='python')['Menuo']))
 # bars = []
@@ -164,6 +165,7 @@ import numpy as np
 # plt.xticks([ind + bar_width for ind in index], df['Menuo'], rotation=45)
 # plt.legend()
 # plt.tight_layout()
+# plt.savefig('Grafikai/Transporto registracija 2021 vs 2022_stulpelinis.jpg')
 # plt.show()
 
 # ISVADA: PALYGINUS 2021-2022 METUS, MATYTI, KAD REGISTRUOJAMU AUTOMOBILIU SEZONISKUMO TENDENCIJA
@@ -185,6 +187,7 @@ import numpy as np
 # plt.grid(True, which='both', linestyle='--', linewidth=0.5)  # pridedame tinklelį grafičiui
 # plt.legend()
 # plt.tight_layout()
+# plt.savefig('Grafikai/Transporto registracija 2021 vs 2022_linijinis_jpg')
 # plt.show()
 
 # DVIEJU METU DUOMENYS STULPELINIUOSE GRAFIKUOSE ATVAIZDUOJAMI VIENAME LAPE:
@@ -203,5 +206,6 @@ import numpy as np
 #     plt.title(f'Transporto registracija {year}')
 #     plt.xticks(rotation=45)
 #     plt.tight_layout()
+# plt.savefig('Grafikai/Transporto registracija_2021_2022_suminis_stulpelinis.jpg')
 # plt.show()
 # ISVADA: VIZUALIZACIJAI IR 2021/2022 METU PALYGINIMUI TINKAMAS IR STULPELINIS, IR LINIJINIS GRAFIKAS.

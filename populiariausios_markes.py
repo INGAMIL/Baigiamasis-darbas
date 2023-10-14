@@ -9,87 +9,87 @@ import numpy as np
 
 # NAUJU IR NAUDOTU AUTOMOBILIU POPULIARUMO LENTELES:
 
-# url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2022&dataquery='
-# response = requests.get(url)
-# soup = BeautifulSoup(response.content, 'html.parser')
-# tables = soup.find_all('table', class_='grey large left')
-# if len(tables) >= 2:
-#     data1 = []
-#     data2 = []
-#     # Pirmoji lentelė
-#     rows = tables[1].find_all('tr')
-#     for row in rows[1:]:
-#         columns = row.find_all('td')
-#         if len(columns) >= 6:
-#             data1.append({
-#                 'Mėnuo': columns[0].text.strip(),
-#                 'TOYOTA': columns[1].text.strip(),
-#                 'VOLKSWAGEN': columns[2].text.strip(),
-#                 'SKODA': columns[3].text.strip(),
-#                 'KIA': columns[4].text.strip(),
-#                 'NISSAN': columns[5].text.strip()
-#             })
-#     # Antroji lentelė
-#     rows = tables[2].find_all('tr')
-#     for row in rows[1:]:
-#         columns = row.find_all('td')
-#         if len(columns) >= 6:
-#             data2.append({
-#                 'Mėnuo': columns[0].text.strip(),
-#                 'VOLKSWAGEN': columns[1].text.strip(),
-#                 'BMW': columns[2].text.strip(),
-#                 'AUDI': columns[3].text.strip(),
-#                 'TOYOTA': columns[4].text.strip(),
-#                 'OPEL': columns[5].text.strip()
-#             })
-#     df1 = pd.DataFrame(data1, columns=['Mėnuo', 'TOYOTA', 'VOLKSWAGEN', 'SKODA', 'KIA', 'NISSAN'])
-#     df2 = pd.DataFrame(data2, columns=['Mėnuo', 'VOLKSWAGEN', 'BMW', 'AUDI', 'TOYOTA', 'OPEL'])
-#     print(df1)
-#     print(df2)
+url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2022&dataquery='
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+tables = soup.find_all('table', class_='grey large left')
+if len(tables) >= 2:
+    data1 = []
+    data2 = []
+    # Pirmoji lentelė
+    rows = tables[1].find_all('tr')
+    for row in rows[1:]:
+        columns = row.find_all('td')
+        if len(columns) >= 6:
+            data1.append({
+                'Mėnuo': columns[0].text.strip(),
+                'TOYOTA': columns[1].text.strip(),
+                'VOLKSWAGEN': columns[2].text.strip(),
+                'SKODA': columns[3].text.strip(),
+                'KIA': columns[4].text.strip(),
+                'NISSAN': columns[5].text.strip()
+            })
+    # Antroji lentelė
+    rows = tables[2].find_all('tr')
+    for row in rows[1:]:
+        columns = row.find_all('td')
+        if len(columns) >= 6:
+            data2.append({
+                'Mėnuo': columns[0].text.strip(),
+                'VOLKSWAGEN': columns[1].text.strip(),
+                'BMW': columns[2].text.strip(),
+                'AUDI': columns[3].text.strip(),
+                'TOYOTA': columns[4].text.strip(),
+                'OPEL': columns[5].text.strip()
+            })
+    df1 = pd.DataFrame(data1, columns=['Mėnuo', 'TOYOTA', 'VOLKSWAGEN', 'SKODA', 'KIA', 'NISSAN'])
+    df2 = pd.DataFrame(data2, columns=['Mėnuo', 'VOLKSWAGEN', 'BMW', 'AUDI', 'TOYOTA', 'OPEL'])
+    print(df1)
+    print(df2)
 #     df1.to_csv('populiariausios_naujos_markes_2022.csv')
 #     df2.to_csv('populiariausios_senos_markes_2022.csv')
 
 # 2021 METU DUOMENYS:
 # NAUJU IR NAUDOTU AUTOMOBILIU POPULIARUMAS:
 
-# url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2021&dataquery='
-# response = requests.get(url)
-# soup = BeautifulSoup(response.content, 'html.parser')
-# tables = soup.find_all('table', class_='grey large left')
-# if len(tables) >= 2:
-#     data1 = []
-#     data2 = []
+url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2021&dataquery='
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+tables = soup.find_all('table', class_='grey large left')
+if len(tables) >= 2:
+    data1 = []
+    data2 = []
 #     # Pirmoji lentelė
-#     rows = tables[1].find_all('tr')
-#     for row in rows[1:]:
-#         columns = row.find_all('td')
-#         if len(columns) >= 6:
-#             data1.append({
-#                 'Mėnuo': columns[0].text.strip(),
-#                 'FIAT': columns[1].text.strip(),
-#                 'TOYOTA': columns[2].text.strip(),
-#                 'VOLKSWAGEN': columns[3].text.strip(),
-#                 'SKODA': columns[4].text.strip(),
-#                 'PEUGEOT': columns[5].text.strip(),
-#
-#             })
+    rows = tables[1].find_all('tr')
+    for row in rows[1:]:
+        columns = row.find_all('td')
+        if len(columns) >= 6:
+            data1.append({
+                'Mėnuo': columns[0].text.strip(),
+                'FIAT': columns[1].text.strip(),
+                'TOYOTA': columns[2].text.strip(),
+                'VOLKSWAGEN': columns[3].text.strip(),
+                'SKODA': columns[4].text.strip(),
+                'PEUGEOT': columns[5].text.strip(),
+
+            })
 #     # Antroji lentelė
-#     rows = tables[2].find_all('tr')
-#     for row in rows[1:]:
-#         columns = row.find_all('td')
-#         if len(columns) >= 6:
-#             data2.append({
-#                 'Mėnuo': columns[0].text.strip(),
-#                 'VOLKSWAGEN': columns[1].text.strip(),
-#                 'BMW': columns[2].text.strip(),
-#                 'AUDI': columns[3].text.strip(),
-#                 'TOYOTA': columns[5].text.strip(),
-#                 'OPEL': columns[4].text.strip()
-#             })
-#     df1 = pd.DataFrame(data1, columns=['Mėnuo', 'FIAT', 'TOYOTA', 'VOLKSWAGEN', 'SKODA', 'PEUGEOT'])
-#     df2 = pd.DataFrame(data2, columns=['Mėnuo', 'VOLKSWAGEN', 'BMW', 'AUDI', 'OPEL', 'TOYOTA'])
-#     print(df1)
-#     print(df2)
+    rows = tables[2].find_all('tr')
+    for row in rows[1:]:
+        columns = row.find_all('td')
+        if len(columns) >= 6:
+            data2.append({
+                'Mėnuo': columns[0].text.strip(),
+                'VOLKSWAGEN': columns[1].text.strip(),
+                'BMW': columns[2].text.strip(),
+                'AUDI': columns[3].text.strip(),
+                'TOYOTA': columns[5].text.strip(),
+                'OPEL': columns[4].text.strip()
+            })
+    df1 = pd.DataFrame(data1, columns=['Mėnuo', 'FIAT', 'TOYOTA', 'VOLKSWAGEN', 'SKODA', 'PEUGEOT'])
+    df2 = pd.DataFrame(data2, columns=['Mėnuo', 'VOLKSWAGEN', 'BMW', 'AUDI', 'OPEL', 'TOYOTA'])
+    print(df1)
+    print(df2)
 #     df1.to_csv('populiariausios_naujos_markes_2021.csv')
 #     df2.to_csv('populiariausios_senos_markes_2021.csv')
 #
@@ -100,87 +100,89 @@ import numpy as np
 # su visais pirkimais pamenesiui is automobiliu registracijos 2021
 
 
-# populiariausios_naujos_markes_2021_new = pd.read_csv('Files_csv/populiariausios_naujos_markes_2021.csv')
-# automobiliu_registracija_2021 = pd.read_csv('Files_csv/automobiliu_registracija_2021.csv')
-# nauji_automobiliai_M1 = automobiliu_registracija_2021['Is ju M1 klases nauju lengvuju automobiliu']
-# populiariausios_naujos_markes_2021_new['Is ju M1 klases nauju lengvuju automobiliu'] = nauji_automobiliai_M1
-# populiariausios_naujos_markes_2021_new.to_csv('Files_csv/populiariausios_naujos_markes_2021_new.csv', index=False)
+populiariausios_naujos_markes_2021_new = pd.read_csv('Files_csv/populiariausios_naujos_markes_2021.csv')
+automobiliu_registracija_2021 = pd.read_csv('Files_csv/automobiliu_registracija_2021.csv')
+nauji_automobiliai_M1 = automobiliu_registracija_2021['Is ju M1 klases nauju lengvuju automobiliu']
+populiariausios_naujos_markes_2021_new['Is ju M1 klases nauju lengvuju automobiliu'] = nauji_automobiliai_M1
+populiariausios_naujos_markes_2021_new.to_csv('Files_csv/populiariausios_naujos_markes_2021_new.csv', index=False)
 
 # prie nauju populiauriusiu markiu 2022 pridejome stulpeli
-# su visais pirkimais pamenesiui is automobiliu registracijos 2021
+# su visais pirkimais pamenesiui is automobiliu registracijos 2022
 
 
-# populiariausios_naujos_markes_2022_new = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022.csv')
-# automobiliu_registracija_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv')
-# nauji_automobiliai_M1_2022 = automobiliu_registracija_2022['Is ju M1 klases nauju lengvuju automobiliu']
-# populiariausios_naujos_markes_2022_new['Is ju M1 klases nauju lengvuju automobiliu'] = nauji_automobiliai_M1_2022
-# populiariausios_naujos_markes_2022_new.to_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv', index=False)
+populiariausios_naujos_markes_2022_new = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022.csv')
+automobiliu_registracija_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv')
+nauji_automobiliai_M1_2022 = automobiliu_registracija_2022['Is ju M1 klases nauju lengvuju automobiliu']
+populiariausios_naujos_markes_2022_new['Is ju M1 klases nauju lengvuju automobiliu'] = nauji_automobiliai_M1_2022
+populiariausios_naujos_markes_2022_new.to_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv', index=False)
 
 # POPULIARIAUSIU MARKIU ANALIZE:
 
 #TIKSLAS: nustatyti procentine populiariausiu M1 klases nauju automobiliu dali nuo
 # visu naujai registruotu transporto priemoniu 2021:
 
-# df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2021_new.csv', skipfooter=1, engine='python')
-# df = df[df['Unnamed: 0'] != 'Iš viso']
-# df['FIAT'] = df['FIAT'].astype(int)
-# df['TOYOTA'] = df['TOYOTA'].astype(int)
-# df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
-# df['SKODA'] = df['SKODA'].astype(int)
-# df['PEUGEOT'] = df['PEUGEOT'].astype(int)
-# df['FIAT_procentai'] = (df['FIAT'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['TOYOTA_procentai'] = (df['TOYOTA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['VOLKSWAGEN_procentai'] = (df['VOLKSWAGEN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['SKODA_procentai'] = (df['SKODA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['PEUGEOT_procentai'] = (df['PEUGEOT'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# plt.figure(figsize=(10, 6))
-# plt.plot(df['Mėnuo'], df['FIAT_procentai'], label='FIAT', marker='o')
-# plt.plot(df['Mėnuo'], df['TOYOTA_procentai'], label='TOYOTA', marker='o')
-# plt.plot(df['Mėnuo'], df['VOLKSWAGEN_procentai'], label='VOLKSWAGEN', marker='o')
-# plt.plot(df['Mėnuo'], df['SKODA_procentai'], label='SKODA', marker='o')
-# plt.plot(df['Mėnuo'], df['PEUGEOT_procentai'], label='PEUGEOT', marker='o')
-# plt.xlabel('Mėnuo')
-# plt.ylabel('Procentai nuo visų naujų M1 automobilių')
-# plt.title('Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2021 m.')
-# plt.xticks(rotation=45)
-# plt.legend()
-# plt.grid(True, which='both', linestyle='--', linewidth=0.5)
-# plt.tight_layout()
-# plt.show()
+df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2021_new.csv', skipfooter=1, engine='python')
+df = df[df['Unnamed: 0'] != 'Iš viso']
+df['FIAT'] = df['FIAT'].astype(int)
+df['TOYOTA'] = df['TOYOTA'].astype(int)
+df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
+df['SKODA'] = df['SKODA'].astype(int)
+df['PEUGEOT'] = df['PEUGEOT'].astype(int)
+df['FIAT_procentai'] = (df['FIAT'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['TOYOTA_procentai'] = (df['TOYOTA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['VOLKSWAGEN_procentai'] = (df['VOLKSWAGEN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['SKODA_procentai'] = (df['SKODA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['PEUGEOT_procentai'] = (df['PEUGEOT'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+plt.figure(figsize=(10, 6))
+plt.plot(df['Mėnuo'], df['FIAT_procentai'], label='FIAT', marker='o')
+plt.plot(df['Mėnuo'], df['TOYOTA_procentai'], label='TOYOTA', marker='o')
+plt.plot(df['Mėnuo'], df['VOLKSWAGEN_procentai'], label='VOLKSWAGEN', marker='o')
+plt.plot(df['Mėnuo'], df['SKODA_procentai'], label='SKODA', marker='o')
+plt.plot(df['Mėnuo'], df['PEUGEOT_procentai'], label='PEUGEOT', marker='o')
+plt.xlabel('Mėnuo')
+plt.ylabel('Procentai nuo visų naujų M1 automobilių')
+plt.title('Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2021 m.')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+plt.tight_layout()
+plt.savefig('Grafikai/Procentine populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2021.jpg')
+plt.show()
 
 
 # Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022
 
-# df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv',skipfooter=1, engine='python')
-# df = df[df['Unnamed: 0'] != 'Iš viso']
+df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv',skipfooter=1, engine='python')
+df = df[df['Unnamed: 0'] != 'Iš viso']
 
 # # 2022 m populiariausiu automobiliu markes skiriasi
 #
-# df['TOYOTA'] = df['TOYOTA'].astype(int)
-# df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
-# df['SKODA'] = df['SKODA'].astype(int)
-# df['KIA'] = df['KIA'].astype(int)
-# df['NISSAN'] = df['NISSAN'].astype(int)
-# df['TOYOTA_procentai'] = (df['TOYOTA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['VOLKSWAGEN_procentai'] = (df['VOLKSWAGEN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['SKODA_procentai'] = (df['SKODA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['KIA_procentai'] = (df['KIA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# df['NISSAN_procentai'] = (df['NISSAN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-# plt.figure(figsize=(10, 6))
+df['TOYOTA'] = df['TOYOTA'].astype(int)
+df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
+df['SKODA'] = df['SKODA'].astype(int)
+df['KIA'] = df['KIA'].astype(int)
+df['NISSAN'] = df['NISSAN'].astype(int)
+df['TOYOTA_procentai'] = (df['TOYOTA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['VOLKSWAGEN_procentai'] = (df['VOLKSWAGEN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['SKODA_procentai'] = (df['SKODA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['KIA_procentai'] = (df['KIA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+df['NISSAN_procentai'] = (df['NISSAN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+plt.figure(figsize=(10, 6))
 #
-# plt.plot(df['Mėnuo'], df['TOYOTA_procentai'], label='TOYOTA', marker='o')
-# plt.plot(df['Mėnuo'], df['VOLKSWAGEN_procentai'], label='VOLKSWAGEN', marker='o')
-# plt.plot(df['Mėnuo'], df['SKODA_procentai'], label='SKODA', marker='o')
-# plt.plot(df['Mėnuo'], df['KIA_procentai'], label='KIA', marker='o')
-# plt.plot(df['Mėnuo'], df['NISSAN_procentai'], label='NISSAN', marker='o')
-# plt.xlabel('Mėnuo')
-# plt.ylabel('Procentai nuo visų naujų M1 automobilių')
-# plt.title('Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022 m.')
-# plt.xticks(rotation=45)
-# plt.legend()
-# plt.grid(True, which='both', linestyle='--', linewidth=0.5)
-# plt.tight_layout()
-# plt.show()
+plt.plot(df['Mėnuo'], df['TOYOTA_procentai'], label='TOYOTA', marker='o')
+plt.plot(df['Mėnuo'], df['VOLKSWAGEN_procentai'], label='VOLKSWAGEN', marker='o')
+plt.plot(df['Mėnuo'], df['SKODA_procentai'], label='SKODA', marker='o')
+plt.plot(df['Mėnuo'], df['KIA_procentai'], label='KIA', marker='o')
+plt.plot(df['Mėnuo'], df['NISSAN_procentai'], label='NISSAN', marker='o')
+plt.xlabel('Mėnuo')
+plt.ylabel('Procentai nuo visų naujų M1 automobilių')
+plt.title('Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022 m.')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+plt.tight_layout()
+plt.savefig('Grafikai/Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022.jpg')
+plt.show()
 
 # ISVADA: 2021/2022 LYGINAMOJI ANALIZE PARODO, KAD VYRAUJA TOS PACIOS MARKES, TACIAU
 # 2022 M. TOYOTA POPULIARUMAS ISAUGO DEL IMONES VYKDOMOS INTENSYVIOS AKCIJU POLITIKOS IR DEL
