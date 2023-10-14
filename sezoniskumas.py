@@ -165,7 +165,7 @@ import numpy as np
 # plt.xticks([ind + bar_width for ind in index], df['Menuo'], rotation=45)
 # plt.legend()
 # plt.tight_layout()
-# plt.savefig('Grafikai/Transporto registracija 2021 vs 2022_stulpelinis.jpg')
+# plt.savefig('Grafikai/Transporto_registracija_2021_vs_2022_stulpelinis.jpg')
 # plt.show()
 
 # ISVADA: PALYGINUS 2021-2022 METUS, MATYTI, KAD REGISTRUOJAMU AUTOMOBILIU SEZONISKUMO TENDENCIJA
@@ -187,7 +187,7 @@ import numpy as np
 # plt.grid(True, which='both', linestyle='--', linewidth=0.5)  # pridedame tinklelį grafičiui
 # plt.legend()
 # plt.tight_layout()
-# plt.savefig('Grafikai/Transporto registracija 2021 vs 2022_linijinis_jpg')
+# plt.savefig('Grafikai/Transporto_registracija_2021_vs_2022_linijinis_jpg')
 # plt.show()
 
 # DVIEJU METU DUOMENYS STULPELINIUOSE GRAFIKUOSE ATVAIZDUOJAMI VIENAME LAPE:
@@ -206,6 +206,6 @@ import numpy as np
 #     plt.title(f'Transporto registracija {year}')
 #     plt.xticks(rotation=45)
 #     plt.tight_layout()
-# plt.savefig('Grafikai/Transporto registracija_2021_2022_suminis_stulpelinis.jpg')
+# plt.savefig('Grafikai/Transporto_registracija_2021_2022_suminis_stulpelinis.jpg')
 # plt.show()
 # ISVADA: VIZUALIZACIJAI IR 2021/2022 METU PALYGINIMUI TINKAMAS IR STULPELINIS, IR LINIJINIS GRAFIKAS.

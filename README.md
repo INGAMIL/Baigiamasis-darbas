@@ -30,7 +30,7 @@ POPULIARIAUSIOS TRANSPORTO PRIEMONIU MARKES LIETUVOJE
 
 
 PROGNOZES
-![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Naujų_automobilių_įvežimo_prognozė.jpg)
-![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Elektromobiliu_įvežimo_prognozė.png)
-![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Hibridu_įvežimo_prognozė.jpg)
+![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Nauju_automobiliu_ivezimo_prognoze.jpg)
+![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Elektromobiliu_ivezimo_prognoze.jpg)
+![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Hibridu_ivezimo_prognoze.jpg)
 

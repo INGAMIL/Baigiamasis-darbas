@@ -146,7 +146,7 @@ plt.xticks(rotation=45)
 plt.legend()
 plt.grid(True, which='both', linestyle='--', linewidth=0.5)
 plt.tight_layout()
-plt.savefig('Grafikai/Procentine populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2021.jpg')
+plt.savefig('Grafikai/Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2021.jpg')
 plt.show()
 
 
@@ -181,7 +181,7 @@ plt.xticks(rotation=45)
 plt.legend()
 plt.grid(True, which='both', linestyle='--', linewidth=0.5)
 plt.tight_layout()
-plt.savefig('Grafikai/Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022.jpg')
+plt.savefig('Grafikai/Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2022.jpg')
 plt.show()
 
 # ISVADA: 2021/2022 LYGINAMOJI ANALIZE PARODO, KAD VYRAUJA TOS PACIOS MARKES, TACIAU
