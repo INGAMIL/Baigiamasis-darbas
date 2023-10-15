@@ -75,68 +75,68 @@ import numpy as np
 
 # 3 menesiai, per kuriuos i Lietuva ivezama maziausiai transporto priemoniu:
 
-# suminiai_duomenys_2021 = pd.read_csv('Files_csv/automobiliu_registracija_2021.csv', skipfooter=1, engine='python')
-# suminiai_duomenys_2021['suma_transporto_priemoniu_2021'] = suminiai_duomenys_2021['Is viso naudotu transporto priemoniu']
-# +suminiai_duomenys_2021['Is viso nauju transporto priemoniu']
-# low_3_menesiai_is_viso_transporto_2021 =suminiai_duomenys_2021.nsmallest(3, 'suma_transporto_priemoniu_2021')
-# [['Menuo', 'suma_transporto_priemoniu_2021']]
-# print(low_3_menesiai_is_viso_transporto_2021.to_string(index=False))
+suminiai_duomenys_2021 = pd.read_csv('Files_csv/automobiliu_registracija_2021.csv', skipfooter=1, engine='python')
+suminiai_duomenys_2021['suma_transporto_priemoniu_2021'] = suminiai_duomenys_2021['Is viso naudotu transporto priemoniu']
++suminiai_duomenys_2021['Is viso nauju transporto priemoniu']
+low_3_menesiai_is_viso_transporto_2021 =suminiai_duomenys_2021.nsmallest(3, 'suma_transporto_priemoniu_2021')
+[['Menuo', 'suma_transporto_priemoniu_2021']]
+print(low_3_menesiai_is_viso_transporto_2021.to_string(index=False))
+
+suminiai_duomenys_2021['suma_M1_klases_2021'] = suminiai_duomenys_2021['Is ju M1 klases naudotu lengvuju automobiliu']
++suminiai_duomenys_2021['Is ju M1 klases nauju lengvuju automobiliu']
+low_3_menesiai_is_viso_M1_2021 = suminiai_duomenys_2021.nsmallest(3, 'suma_M1_klases_2021')[['Menuo', 'suma_M1_klases_2021']]
+print(low_3_menesiai_is_viso_M1_2021.to_string(index=False))
+
 #
-# suminiai_duomenys_2021['suma_M1_klases_2021'] = suminiai_duomenys_2021['Is ju M1 klases naudotu lengvuju automobiliu']
-# +suminiai_duomenys_2021['Is ju M1 klases nauju lengvuju automobiliu']
-# low_3_menesiai_is_viso_M1_2021 = suminiai_duomenys_2021.nsmallest(3, 'suma_M1_klases_2021')[['Menuo', 'suma_M1_klases_2021']]
-# print(low_3_menesiai_is_viso_M1_2021.to_string(index=False))
+suminiai_duomenys_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
+suminiai_duomenys_2022['suma_transporto_priemoniu_2022'] = suminiai_duomenys_2022['Is viso naudotu transporto priemoniu']
++suminiai_duomenys_2022['Is viso nauju transporto priemoniu']
+low_3_menesiai_is_viso_transporto_2022 =suminiai_duomenys_2022.nsmallest(3, 'suma_transporto_priemoniu_2022')
+[['Menuo', 'suma_transporto_priemoniu_2022']]
+print(low_3_menesiai_is_viso_transporto_2022.to_string(index=False))
 #
-# #
-# suminiai_duomenys_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
-# suminiai_duomenys_2022['suma_transporto_priemoniu_2022'] = suminiai_duomenys_2022['Is viso naudotu transporto priemoniu']
-# +suminiai_duomenys_2022['Is viso nauju transporto priemoniu']
-# low_3_menesiai_is_viso_transporto_2022 =suminiai_duomenys_2022.nsmallest(3, 'suma_transporto_priemoniu_2022')
-# [['Menuo', 'suma_transporto_priemoniu_2022']]
-# print(low_3_menesiai_is_viso_transporto_2022.to_string(index=False))
-# #
-# suminiai_duomenys_2022['suma_M1_klases_2022'] = suminiai_duomenys_2022['Is ju M1 klases naudotu lengvuju automobiliu']
-# +suminiai_duomenys_2022['Is ju M1 klases nauju lengvuju automobiliu']
-# low_3_menesiai_is_viso_M1_2022 = suminiai_duomenys_2022.nsmallest(3, 'suma_M1_klases_2022')
-# [['Menuo', 'suma_M1_klases_2022']]
-# print(low_3_menesiai_is_viso_M1_2022.to_string(index=False))
-#
-# plt.figure(figsize=(14, 10))
-# # # Viso transporto priemonių 2021
-# plt.subplot(2, 2, 1)
-# plt.bar(low_3_menesiai_is_viso_transporto_2021['Menuo'],
-# low_3_menesiai_is_viso_transporto_2021['suma_transporto_priemoniu_2021'], color='blue', label='2021')
-# plt.title('Maziausiai ivezama is viso transporto priemonių skaičių 2021')
-# plt.xlabel('Mėnuo')
-# plt.ylabel('Kiekis')
-# plt.xticks(rotation=45)
-# # M1 klasės lengvųjų automobilių 2021
-# plt.subplot(2, 2, 2)
-# plt.bar(low_3_menesiai_is_viso_M1_2021['Menuo'],
-# low_3_menesiai_is_viso_M1_2021['suma_M1_klases_2021'], color='green', label='2021')
-# plt.title('Maziausiai ivezama M1 klasės lengvųjų automobilių skaičių 2021')
-# plt.xlabel('Mėnuo')
-# plt.ylabel('Kiekis')
-# plt.xticks(rotation=45)
-# # # Viso transporto priemonių 2022
-# plt.subplot(2, 2, 3)
-# plt.bar(low_3_menesiai_is_viso_transporto_2022['Menuo'],
-# low_3_menesiai_is_viso_transporto_2022['suma_transporto_priemoniu_2022'], color='blue', label='2022')
-# plt.title('Maziausiai ivezama is viso transporto priemonių skaičių 2022')
-# plt.xlabel('Mėnuo')
-# plt.ylabel('Kiekis')
-# plt.xticks(rotation=45)
-# # # M1 klasės lengvųjų automobilių 2022
-# plt.subplot(2, 2, 4)
-# plt.bar(low_3_menesiai_is_viso_M1_2022['Menuo'],
-# low_3_menesiai_is_viso_M1_2022['suma_M1_klases_2022'], color='green', label='2022')
-# plt.title('Maziausiai ivezama M1 klasės lengvųjų automobilių skaičių 2022')
-# plt.xlabel('Mėnuo')
-# plt.ylabel('Kiekis')
-# plt.xticks(rotation=45)
-# plt.tight_layout()
-# plt.savefig('Grafikai/suminis_low3_menesiai_2021_2022.jpg')
-# plt.show()
+suminiai_duomenys_2022['suma_M1_klases_2022'] = suminiai_duomenys_2022['Is ju M1 klases naudotu lengvuju automobiliu']
++suminiai_duomenys_2022['Is ju M1 klases nauju lengvuju automobiliu']
+low_3_menesiai_is_viso_M1_2022 = suminiai_duomenys_2022.nsmallest(3, 'suma_M1_klases_2022')
+[['Menuo', 'suma_M1_klases_2022']]
+print(low_3_menesiai_is_viso_M1_2022.to_string(index=False))
+
+plt.figure(figsize=(14, 10))
+# # Viso transporto priemonių 2021
+plt.subplot(2, 2, 1)
+plt.bar(low_3_menesiai_is_viso_transporto_2021['Menuo'],
+low_3_menesiai_is_viso_transporto_2021['suma_transporto_priemoniu_2021'], color='blue', label='2021')
+plt.title('Mažiausiai įvežama is viso transporto priemonių 2021')
+plt.xlabel('Mėnuo')
+plt.ylabel('Kiekis')
+plt.xticks(rotation=45)
+# M1 klasės lengvųjų automobilių 2021
+plt.subplot(2, 2, 2)
+plt.bar(low_3_menesiai_is_viso_M1_2021['Menuo'],
+low_3_menesiai_is_viso_M1_2021['suma_M1_klases_2021'], color='green', label='2021')
+plt.title('Mažiausiai įvežama M1 klasės lengvųjų automobilių 2021')
+plt.xlabel('Mėnuo')
+plt.ylabel('Kiekis')
+plt.xticks(rotation=45)
+# # Viso transporto priemonių 2022
+plt.subplot(2, 2, 3)
+plt.bar(low_3_menesiai_is_viso_transporto_2022['Menuo'],
+low_3_menesiai_is_viso_transporto_2022['suma_transporto_priemoniu_2022'], color='blue', label='2022')
+plt.title('Mažiausiai įvežama iš viso transporto priemonių 2022')
+plt.xlabel('Mėnuo')
+plt.ylabel('Kiekis')
+plt.xticks(rotation=45)
+# # M1 klasės lengvųjų automobilių 2022
+plt.subplot(2, 2, 4)
+plt.bar(low_3_menesiai_is_viso_M1_2022['Menuo'],
+low_3_menesiai_is_viso_M1_2022['suma_M1_klases_2022'], color='green', label='2022')
+plt.title('Mažiausiai įvežama M1 klasės lengvųjų automobilių 2022')
+plt.xlabel('Mėnuo')
+plt.ylabel('Kiekis')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('Grafikai/suminis_low3_menesiai_2021_2022.jpg')
+plt.show()
 
 # ISVADA: LIETUVOJE DOMINUOJA I LIETUVA IVEZAMU PIRMA KARTA AUTOMOBILIU SEZONISKUMAS:
 # DAUGIAUSIAI AUTOMOBILIU REGISTRACIJU ATLIEKAMA PAVASARI IR VASAROS PRADZIOJE.

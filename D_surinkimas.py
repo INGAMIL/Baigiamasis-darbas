@@ -91,16 +91,16 @@ import numpy as np
 # plt.show()
 #
 #
-# df = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
-# df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
-# naujas_df_2022 = df[['Menuo', 'Is viso registruota']].copy()
-# print(naujas_df_2022)
-# plt.figure(figsize=(10,6))
-# plt.bar(naujas_df_2022['Menuo'], naujas_df_2022['Is viso registruota'])
-# plt.xlabel('Menuo')
-# plt.ylabel('Is viso registruota')
-# plt.title('Transporto_registracija_2022')
-# plt.xticks(rotation=45)
-# plt.savefig('Grafikai/Transporto_registracija_2022.jpg')
-# plt.show()
+df = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
+df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
+naujas_df_2022 = df[['Menuo', 'Is viso registruota']].copy()
+print(naujas_df_2022)
+plt.figure(figsize=(10,6))
+plt.bar(naujas_df_2022['Menuo'], naujas_df_2022['Is viso registruota'])
+plt.xlabel('Menuo')
+plt.ylabel('Is viso registruota')
+plt.title('Transporto registracija 2022')
+plt.xticks(rotation=45)
+plt.savefig('Grafikai/Transporto_registracija_2022.jpg')
+plt.show()
 
