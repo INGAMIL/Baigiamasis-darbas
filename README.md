@@ -179,6 +179,7 @@ IR INFLIACIJA_
 
 ![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Elektromobiliu_ivezimo_prognoze.jpg)
 ![](C:\Users\ingam\OneDrive\Documents\GitHub\Baigiamasis-darbas\Grafikai\Hibridu_ivezimo_prognoze.jpg)
+![](Grafikai/Elektromobiliu_ivezimo_prognoze.jpg)
 
 **IŠVADA:** _NAUDOJANT TIESINĖS REGRESIJOS PROGNOZAVIMO METODĄ, MATYTI, KAD LIETUVOJE IR TOLIAU
 IŠLIKS ELEKTRINIŲ IR HIBRIDINIŲ TRANSPORTO PRIEMONIŲ AUGIMO TENDENCIJA ATEINANČIUS
