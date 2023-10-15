@@ -66,8 +66,8 @@ df.to_csv('automobiliu_registracija_2022.csv')
 Dviejų metų iš viso į Lietuvą naujai įvežamų transporto priemonių dinamika pamėnesiui
 atvaizduota grafiškai, naudojant matplotlib biblioteką
 
-![](Grafikai\Transporto_registracija_2021.jpg)
-![](Grafikai\Transporto_registracija_2022.jpg)
+![](Grafikai/Transporto_registracija_2021.jpg)
+![](Grafikai/Transporto_registracija_2022.jpg)
 
 ### SEZONIŠKUMO TYRIMAS
 
@@ -77,7 +77,7 @@ Pritaikius funkciją pd.read_csv, atliktas reikalingų failų duomenų nuskaitym
 sudėties veiksmas, nustatyti top 5 mėnesiai, kuriais
 įvežama daugiausiai transporto priemonių ir iš jų - M1 klasės automobilių.
 
-![](Grafikai\suminis_top5_menesiai_2021_2022.jpg)
+![](Grafikai/suminis_top5_menesiai_2021_2022.jpg)
 
 **IŠVADA:** _ATLIKUS DUOMENŲ ANALIZĘ, MATYTI, KAD YRA TAM TIKRI MĖNESIAI, KADA DAUGIAUSIAI ĮREGISTRUOJAMA NAUJAI 
 ĮVEŽTŲ TRANSPORTO PRIEMONIŲ. TAI - PAVASARIS IR VASAROS PRADŽIA, TODĖL GALIMA TEIGTI, KAD LIETUVOJE EGZISTUOJA ĮVEŽAMŲ 
@@ -87,14 +87,14 @@ BIRŽELIO MĖN._
 
 Nustatyti 3 mėnesiai, kuomet mažiausiai įvežama transporto priemonių:
 
-![](Grafikai\suminis_low3_menesiai_2021_2022.jpg)
+![](Grafikai/suminis_low3_menesiai_2021_2022.jpg)
 
 Naudojant MATPLOTLIB bibliotekos galimybes, pateikiamos skirtingos tų pačių duomenų vizualizacijos:
 linijinis/stulpelinis/suminis dviejų metų stulpelinis grafikai:
 
-![](Grafikai\Transporto_registracija_2021_vs_2022_stulpelinis.jpg)
-![](Grafikai\Transporto_registracija_2021_vs_2022_linijinis_jpg.png)
-![](Grafikai\Transporto_registracija_2021_2022_suminis_stulpelinis.jpg)
+![](Grafikai/Transporto_registracija_2021_vs_2022_stulpelinis.jpg)
+![](Grafikai/Transporto_registracija_2021_vs_2022_linijinis_jpg.png)
+![](Grafikai/Transporto_registracija_2021_2022_suminis_stulpelinis.jpg)
 
 **IŠVADA:** _PALYGINUS 2021-2022 METUS, MATYTI, KAD NAUJAI ĮVEŽTŲ TRANSPORTO PRIEMONIŲ SEZONIŠKUMO 
 TENDENCIJA IŠLIEKA PANAŠI._
@@ -115,7 +115,7 @@ sąrašo: "for i, (data_file, year) in enumerate(data_files):"
 
 Duomenų vizualizacijai naudota Matplotlib biblioteka
 
-![](Grafikai\Transporto_registracija_2021_vs_2022.jpg)
+![](Grafikai/Transporto_registracija_2021_vs_2022.jpg)
 
 **IšVADA:** _ANALIZUOJANT PAMĖNESIUI MATYTI, KAD Į LIETUVĄ ĮVEŽAMA  BEVEIK DVIGUBAI DAUGIAU
 NAUDOTŲ, NEI NAUJŲ TRANSPORTO PRIEMONIŲ_
@@ -126,7 +126,7 @@ NUO VISŲ REGISTRUOTŲ AUTOMOBILIŲ 2021/2022 METAIS_
 Duomenų analizei naudota Pandas DataFrame struktūra, "for", "sum" ir "append"
 funkcijos, procentų skaičiavimas.
 
-![](Grafikai\Nauju_auto_procentine_dalis_nuo_viso_registruotu_auto.jpg)
+![](Grafikai/Nauju_auto_procentine_dalis_nuo_viso_registruotu_auto.jpg)
 
 **IŠVADA:** _ANALIZUOJANT METINIUS DUOMENIS MATYTI, KAD Į LIETUVĄ ĮVEŽAMA  TIK TREČDALIS NAUJŲ 
 TRANSPORTO PRIEMONIŲ NUO IŠ VISO PER METUS ĮVEŽAMŲ._
@@ -141,9 +141,9 @@ Atliktas pradinių duomenų transformavimas tolesnei analizei: prie naujų popul
 pridėtas stulpelis su visais pirkimais pamėnesiui iš transporto priemonių registracijos 
 2021/2022, naudojant Pandas DataFrame struktūrą.
 
-![](Grafikai\Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2021.jpg)
+![](Grafikai/Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2021.jpg)
 
-![](Grafikai\Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2022.jpg)
+![](Grafikai/Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2022.jpg)
 
 **IŠVADA:** _2021/2022 LYGINAMOJI ANALIZĖ PARODO, KAD VYRAUJA TOS PAČIOS MARKĖS, TAČIAU 2022 M. TOYOTA 
 POPULIARUMAS IŠAUGO DEL ĮMONĖS VYKDOMOS INTENSYVIOS AKCIJŲ POLITIKOS IR DĖL
@@ -153,9 +153,9 @@ IŠPLĖSTOS HIBRIDINIŲ TRANSPORTO PRIEMONIŲ PASIŪLOS IR PALANKIŲ FINANSAVIMO
 **TIKSLAS:** _NUSTATYTI, KOKIOS NAUDOTŲ TRANSPORTO PRIEMONIŲ MARKĖS YRA POPULIARIAUSIOS LIETUVOJE
 IR KOKIĄ PROCENTINĘ DALĮ JOS SUDARO NUO VISŲ ĮVEŽAMŲ NAUDOTŲ TRANSPORTO PRIEMONIŲ_
 
-![](Grafikai\Procentine_pop_M1_naudotu_auto_dalis_nuo_visu_naudotu_registruotu_2021.jpg)
+![](Grafikai/Procentine_pop_M1_naudotu_auto_dalis_nuo_visu_naudotu_registruotu_2021.jpg)
 
-![](Grafikai\Procentine_pop_M1_naudotu_auto_dalis_nuo_visu_naudotu_registruotu_2022.jpg)
+![](Grafikai/Procentine_pop_M1_naudotu_auto_dalis_nuo_visu_naudotu_registruotu_2022.jpg)
 
 **IŠVADA:** _NAUDOTŲ M1 KL. AUTOMOBILIŲ SEGMENTE DOMINUOJA VOKIŠKOS MARKĖS SU TARŠESNIAIS
 GAMTAI VIDAUS DEGIMO VARIKLIAIS._
@@ -170,7 +170,7 @@ Naudotos šios bibliotekos: pandas, matplotlib, sklearn.linear_model, numpy.
 Naudotas tiesinės regresijos metodas is "sklearn" bibliotekos.
 Tiesinė regresija yra statistinis metodas, kuriuo randamas tiesinis ryšis tarp kintamųjų. 
 
-![](Grafikai\Nauju_automobiliu_ivezimo_prognoze.jpg)
+![](Grafikai/Nauju_automobiliu_ivezimo_prognoze.jpg)
 
 **IŠVADA:** _NAUDOJANT TIESINĖS REGRESIJOS PROGNOZAVIMO METODĄ, MATYTI, KAD IŠLIEKA
 NAUJŲ TRANSPORTO PRIEMONIŲ ĮVEŽIMO MAŽĖJIMO TENDENCIJA. ISTORIŠKAI RODIKLIAMS ĮTAKOS
