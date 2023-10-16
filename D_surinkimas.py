@@ -6,11 +6,9 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 
-
-# # is viso registracijos lentele 2021- 2022
 # url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2021&dataquery='
 # response = requests.get(url)
-# # print(response.status_code)
+# print(response.status_code)
 # soup = BeautifulSoup(response.content, 'html.parser')
 # table = soup.find('table', class_='grey large left')
 # print(table)
@@ -40,11 +38,11 @@ import numpy as np
 # df = pd.DataFrame(data, columns=column_names)
 # print(df)
 #
-# # df.to_csv('automobiliu_registracija_2021.csv')
+# df.to_csv('automobiliu_registracija_2021.csv')
 #
 # url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2022&dataquery='
 # response = requests.get(url)
-# # print(response.status_code)
+# print(response.status_code)
 # soup = BeautifulSoup(response.content, 'html.parser')
 # table = soup.find('table', class_='grey large left')
 # print(table)
@@ -74,7 +72,7 @@ import numpy as np
 # df = pd.DataFrame(data, columns=column_names)
 # print(df)
 #
-# # df.to_csv('automobiliu_registracija_2022.csv')
+# df.to_csv('automobiliu_registracija_2022.csv')
 #
 # df = pd.read_csv('Files_csv/automobiliu_registracija_2021.csv', skipfooter=1, engine='python')
 # df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
@@ -89,18 +87,18 @@ import numpy as np
 # plt.xticks(rotation=45)
 # plt.savefig('Grafikai/Transporto_registracija_2021.jpg')
 # plt.show()
-#
-#
-df = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
-df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
-naujas_df_2022 = df[['Menuo', 'Is viso registruota']].copy()
-print(naujas_df_2022)
-plt.figure(figsize=(10,6))
-plt.bar(naujas_df_2022['Menuo'], naujas_df_2022['Is viso registruota'])
-plt.xlabel('Menuo')
-plt.ylabel('Is viso registruota')
-plt.title('Transporto registracija 2022')
-plt.xticks(rotation=45)
-plt.savefig('Grafikai/Transporto_registracija_2022.jpg')
-plt.show()
+# #
 
+# df = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv', skipfooter=1, engine='python')
+# df['Is viso registruota'] = df['Is viso naudotu transporto priemoniu']+df['Is viso nauju transporto priemoniu']
+# naujas_df_2022 = df[['Menuo', 'Is viso registruota']].copy()
+# print(naujas_df_2022)
+# plt.figure(figsize=(10,6))
+# plt.bar(naujas_df_2022['Menuo'], naujas_df_2022['Is viso registruota'])
+# plt.xlabel('Menuo')
+# plt.ylabel('Is viso registruota')
+# plt.title('Transporto registracija 2022')
+# plt.xticks(rotation=45)
+# plt.savefig('Grafikai/Transporto_registracija_2022.jpg')
+# plt.show()
+#

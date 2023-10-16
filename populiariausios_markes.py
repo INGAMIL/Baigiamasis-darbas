@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 import numpy as np
 
-# TIKSLAS: NUSTATYTI, KOKIOS TRANSPORTO PRIEMONIU MARKES YRA POPULIARIAUSIOS LIETUVOJE.
+### TIKSLAS: NUSTATYTI, KOKIOS TRANSPORTO PRIEMONIU MARKES YRA POPULIARIAUSIOS LIETUVOJE.
 
-# NAUJU IR NAUDOTU AUTOMOBILIU POPULIARUMO LENTELES:
-#
+### NAUJU IR NAUDOTU AUTOMOBILIU POPULIARUMO LENTELES:
+
 # url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2022&dataquery='
 # response = requests.get(url)
 # soup = BeautifulSoup(response.content, 'html.parser')
@@ -49,8 +49,8 @@ import numpy as np
 # #     df1.to_csv('populiariausios_naujos_markes_2022.csv')
 # #     df2.to_csv('populiariausios_senos_markes_2022.csv')
 #
-# # 2021 METU DUOMENYS:
-# # NAUJU IR NAUDOTU AUTOMOBILIU POPULIARUMAS:
+### 2021 METU DUOMENYS:
+### NAUJU IR NAUDOTU AUTOMOBILIU POPULIARUMAS:
 #
 # url = 'https://www.regitra.lt/lt/atviri-duomenys/?datayear=2021&dataquery='
 # response = requests.get(url)
@@ -59,7 +59,9 @@ import numpy as np
 # if len(tables) >= 2:
 #     data1 = []
 #     data2 = []
-# #     # Pirmoji lentelė
+
+###     # Pirmoji lentelė
+
 #     rows = tables[1].find_all('tr')
 #     for row in rows[1:]:
 #         columns = row.find_all('td')
@@ -73,7 +75,9 @@ import numpy as np
 #                 'PEUGEOT': columns[5].text.strip(),
 #
 #             })
-# #     # Antroji lentelė
+
+###     # Antroji lentelė
+
 #     rows = tables[2].find_all('tr')
 #     for row in rows[1:]:
 #         columns = row.find_all('td')
@@ -94,10 +98,10 @@ import numpy as np
 #     df2.to_csv('populiariausios_senos_markes_2021.csv')
 #
 
-# DUOMENU TVARTKYMAS TOLESNEI ANALIZEI:
+###  DUOMENU TVARKYMAS TOLESNEI ANALIZEI:
 
-# prie nauju populiariausiu markiu 2021 pridejome stulpeli
-# su visais pirkimais pamenesiui is automobiliu registracijos 2021
+### prie nauju populiariausiu markiu 2021 pridejome stulpeli
+### su visais pirkimais pamenesiui is automobiliu registracijos 2021
 
 
 # populiariausios_naujos_markes_2021_new = pd.read_csv('Files_csv/populiariausios_naujos_markes_2021.csv')
@@ -106,20 +110,20 @@ import numpy as np
 # populiariausios_naujos_markes_2021_new['Is ju M1 klases nauju lengvuju automobiliu'] = nauji_automobiliai_M1
 # populiariausios_naujos_markes_2021_new.to_csv('Files_csv/populiariausios_naujos_markes_2021_new.csv', index=False)
 #
-# # prie nauju populiauriusiu markiu 2022 pridejome stulpeli
-# # su visais pirkimais pamenesiui is automobiliu registracijos 2022
+### prie nauju populiariausiu markiu 2022 pridejome stulpeli
+### su visais pirkimais pamenesiui is automobiliu registracijos 2022
 #
-#
+
 # populiariausios_naujos_markes_2022_new = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022.csv')
 # automobiliu_registracija_2022 = pd.read_csv('Files_csv/automobiliu_registracija_2022.csv')
 # nauji_automobiliai_M1_2022 = automobiliu_registracija_2022['Is ju M1 klases nauju lengvuju automobiliu']
 # populiariausios_naujos_markes_2022_new['Is ju M1 klases nauju lengvuju automobiliu'] = nauji_automobiliai_M1_2022
 # populiariausios_naujos_markes_2022_new.to_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv', index=False)
 
-# POPULIARIAUSIU NAUJU MARKIU ANALIZE:
+### POPULIARIAUSIU NAUJU MARKIU ANALIZE:
 
-#TIKSLAS: nustatyti procentine populiariausiu M1 klases nauju automobiliu dali nuo
-# visu naujai registruotu transporto priemoniu 2021:
+###TIKSLAS: nustatyti procentine populiariausiu M1 klases nauju automobiliu dali nuo
+### visu naujai registruotu transporto priemoniu 2021:
 
 # df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2021_new.csv', skipfooter=1, engine='python')
 # df = df[df['Unnamed: 0'] != 'Iš viso']
@@ -150,47 +154,49 @@ import numpy as np
 # plt.show()
 
 #
-# # Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022
-#
-df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv',skipfooter=1, engine='python')
-df = df[df['Unnamed: 0'] != 'Iš viso']
-#
-# # # 2022 m populiariausiu automobiliu markes skiriasi
-# #
-df['TOYOTA'] = df['TOYOTA'].astype(int)
-df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
-df['SKODA'] = df['SKODA'].astype(int)
-df['KIA'] = df['KIA'].astype(int)
-df['NISSAN'] = df['NISSAN'].astype(int)
-df['TOYOTA_procentai'] = (df['TOYOTA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-df['VOLKSWAGEN_procentai'] = (df['VOLKSWAGEN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-df['SKODA_procentai'] = (df['SKODA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-df['KIA_procentai'] = (df['KIA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-df['NISSAN_procentai'] = (df['NISSAN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
-plt.figure(figsize=(10, 6))
-#
-plt.plot(df['Mėnuo'], df['TOYOTA_procentai'], label='TOYOTA', marker='o')
-plt.plot(df['Mėnuo'], df['VOLKSWAGEN_procentai'], label='VOLKSWAGEN', marker='o')
-plt.plot(df['Mėnuo'], df['SKODA_procentai'], label='SKODA', marker='o')
-plt.plot(df['Mėnuo'], df['KIA_procentai'], label='KIA', marker='o')
-plt.plot(df['Mėnuo'], df['NISSAN_procentai'], label='NISSAN', marker='o')
-plt.xlabel('Mėnuo')
-plt.ylabel('Procentai nuo visų naujų M1 automobilių')
-plt.title('Procentinė populiariausių M1 klasės naujų automobilių dalis nuo visų naujų registruotų 2022 m.')
-plt.xticks(rotation=45)
-plt.legend()
-plt.grid(True, which='both', linestyle='--', linewidth=0.5)
-plt.tight_layout()
-plt.savefig('Grafikai/Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2022.jpg')
-plt.show()
+### Procentinė populiariausiu M1 klases nauju automobiliu dalis nuo visu nauju registruotu 2022
 
-# ISVADA: 2021/2022 LYGINAMOJI ANALIZE PARODO, KAD VYRAUJA TOS PACIOS MARKES, TACIAU
-# 2022 M. TOYOTA POPULIARUMAS ISAUGO DEL IMONES VYKDOMOS INTENSYVIOS AKCIJU POLITIKOS IR DEL
-# ISPLESTOS HIBRIDINIU TRANSPORTO PRIEMONIU PASIULOS IR PALANKIU FINANSAVIMO SALYGU.
+# df = pd.read_csv('Files_csv/populiariausios_naujos_markes_2022_new.csv',skipfooter=1, engine='python')
+# df = df[df['Unnamed: 0'] != 'Iš viso']
 
-# POPULIARIAUSIOS NAUDOTU M1 KLASES AUTOMOBILIU MARKES:
-# prie naudotu populiariausiu markiu 2021 pridejome stulpeli
-# su visais pirkimais pamenesiui is automobiliu registracijos 2021
+## # # 2022 m populiariausiu automobiliu markes skiriasi
+
+
+# df['TOYOTA'] = df['TOYOTA'].astype(int)
+# df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
+# df['SKODA'] = df['SKODA'].astype(int)
+# df['KIA'] = df['KIA'].astype(int)
+# df['NISSAN'] = df['NISSAN'].astype(int)
+# df['TOYOTA_procentai'] = (df['TOYOTA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+# df['VOLKSWAGEN_procentai'] = (df['VOLKSWAGEN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+# df['SKODA_procentai'] = (df['SKODA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+# df['KIA_procentai'] = (df['KIA'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+# df['NISSAN_procentai'] = (df['NISSAN'] / df['Is ju M1 klases nauju lengvuju automobiliu']) * 100
+# plt.figure(figsize=(10, 6))
+
+
+# plt.plot(df['Mėnuo'], df['TOYOTA_procentai'], label='TOYOTA', marker='o')
+# plt.plot(df['Mėnuo'], df['VOLKSWAGEN_procentai'], label='VOLKSWAGEN', marker='o')
+# plt.plot(df['Mėnuo'], df['SKODA_procentai'], label='SKODA', marker='o')
+# plt.plot(df['Mėnuo'], df['KIA_procentai'], label='KIA', marker='o')
+# plt.plot(df['Mėnuo'], df['NISSAN_procentai'], label='NISSAN', marker='o')
+# plt.xlabel('Mėnuo')
+# plt.ylabel('Procentai nuo visų naujų M1 automobilių')
+# plt.title('Procentinė populiariausių M1 klasės naujų automobilių dalis nuo visų naujų registruotų 2022 m.')
+# plt.xticks(rotation=45)
+# plt.legend()
+# plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+# plt.tight_layout()
+# plt.savefig('Grafikai/Procentine_pop_M1_nauju_auto_dalis_nuo_visu_nauju_registruotu_2022.jpg')
+# plt.show()
+
+### ISVADA: 2021/2022 LYGINAMOJI ANALIZE PARODO, KAD VYRAUJA TOS PACIOS MARKES, TACIAU
+### 2022 M. TOYOTA POPULIARUMAS ISAUGO DEL IMONES VYKDOMOS INTENSYVIOS AKCIJU POLITIKOS IR DEL
+### ISPLESTOS HIBRIDINIU TRANSPORTO PRIEMONIU PASIULOS IR PALANKIU FINANSAVIMO SALYGU.
+
+### POPULIARIAUSIOS NAUDOTU M1 KLASES AUTOMOBILIU MARKES:
+### prie naudotu populiariausiu markiu 2021 pridejome stulpeli
+### su visais pirkimais pamenesiui is automobiliu registracijos 2021
 
 
 # populiariausios_naudotos_markes_2021_new = pd.read_csv('Files_csv/populiariausios_senos_markes_2021.csv')
@@ -199,8 +205,8 @@ plt.show()
 # populiariausios_naudotos_markes_2021_new['Is ju M1 klases naudotu lengvuju automobiliu'] = naudoti_automobiliai_M1
 # populiariausios_naudotos_markes_2021_new.to_csv('Files_csv/populiariausios_naudotos_markes_2021_new.csv', index=False)
 
-# prie naudotu populiauriusiu markiu 2022 pridejome stulpeli
-# su visais pirkimais pamenesiui is automobiliu registracijos 2022
+### prie naudotu populiauriusiu markiu 2022 pridejome stulpeli
+### su visais pirkimais pamenesiui is automobiliu registracijos 2022
 
 
 # populiariausios_naudotos_markes_2022_new = pd.read_csv('Files_csv/populiariausios_senos_markes_2022.csv')
@@ -209,10 +215,10 @@ plt.show()
 # populiariausios_naudotos_markes_2022_new['Is ju M1 klases naudotu lengvuju automobiliu'] = naudoti_automobiliai_M1_2022
 # populiariausios_naudotos_markes_2022_new.to_csv('Files_csv/populiariausios_naudotos_markes_2022_new.csv', index=False)
 
-# POPULIARIAUSIU NAUDOTU MARKIU ANALIZE:
+### POPULIARIAUSIU NAUDOTU MARKIU ANALIZE:
 
-# TIKSLAS: nustatyti procentine populiariausiu M1 klases naudotu automobiliu dali nuo
-# visu naujai registruotu transporto priemoniu 2021:
+### TIKSLAS: nustatyti procentine populiariausiu M1 klases naudotu automobiliu dali nuo
+### visu naujai registruotu transporto priemoniu 2021:
 
 # df = pd.read_csv('Files_csv/populiariausios_naudotos_markes_2021_new.csv', skipfooter=1, engine='python')
 # df = df[df['Unnamed: 0'] != 'Iš viso']
@@ -243,12 +249,12 @@ plt.show()
 # plt.show()
 
 
-# Procentinė populiariausiu M1 klases naudotu automobiliu dalis nuo visu naudotu registruotu 2022
+### Procentinė populiariausiu M1 klases naudotu automobiliu dalis nuo visu naudotu registruotu 2022
 
 # df = pd.read_csv('Files_csv/populiariausios_naudotos_markes_2022_new.csv',skipfooter=1, engine='python')
 # df = df[df['Unnamed: 0'] != 'Iš viso']
 
-# # 2022 m populiariausiu naudotu automobiliu markes skiriasi
+### 2022 m populiariausiu naudotu automobiliu markes skiriasi
 
 # df['VOLKSWAGEN'] = df['VOLKSWAGEN'].astype(int)
 # df['BMW'] = df['BMW'].astype(int)
@@ -279,5 +285,5 @@ plt.show()
 # plt.savefig('Grafikai/Procentine_pop_M1_naudotu_auto_dalis_nuo_visu_naudotu_registruotu_2022.jpg')
 # plt.show()
 #
-# ISVADA: NAUDOTŲ M1 KL. AUTOMOBILIŲ SEGMENTE DOMINUOJA VOKIŠKOS MARKĖS SU TARŠESNIAIS
-# GAMTAI VIDAUS DEGIMO VARIKLIAIS.
+### ISVADA: NAUDOTŲ M1 KL. AUTOMOBILIŲ SEGMENTE DOMINUOJA VOKIŠKOS MARKĖS SU TARŠESNIAIS
+### GAMTAI VIDAUS DEGIMO VARIKLIAIS.
